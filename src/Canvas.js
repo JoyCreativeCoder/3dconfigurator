@@ -1,12 +1,13 @@
 import React from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import * as THREE from "three";
 import {
   Center,
   useGLTF,
   Environment,
   AccumulativeShadows,
   RandomizedLight,
+  Decal,
+  useTexture,
 } from "@react-three/drei";
 import { useRef } from "react";
 import { easing } from "maath";
@@ -17,8 +18,12 @@ import { state } from "./Store";
 function Box(props) {
   const { nodes, materials } = useGLTF("/3d_shirt.glb");
   const snap = useSnapshot(state);
+  const texture = useTexture(`/${snap.selectedDecal}.png`)
 
-  materials.lambert1.color = new THREE.Color(snap.selectedColor);
+  useFrame((state, delta) => {
+    easing.dampC(materials.lambert1.color, snap.selectedColor, 0.25, delta);
+  });
+
   return (
     <group {...props} dispose={null}>
       <mesh
@@ -26,10 +31,19 @@ function Box(props) {
         receiveShadow
         geometry={nodes.T_Shirt_male.geometry}
         material={materials.lambert1}
-        material-roughness = {1}
+        material-roughness={1}
         position={[0.419, -0.21, 0]}
         rotation={[Math.PI / 2, 0, 0]}
-      />
+      >
+        <Decal
+        debug
+          position={[0, 0.04, 0.15]}
+          rotation={[0, 0, 0]}
+          scale={0.15}
+          opacity={0.7}
+          map={texture}
+        />
+      </mesh>
     </group>
   );
 }
@@ -43,7 +57,7 @@ export const CanvasApp = ({ position = [0, 0, 2.5], fov = 25 }) => {
       eventPrefix="client"
     >
       <ambientLight intensity={0.5} />
-      <Environment preset="forest" />
+      <Environment preset="city" />
       <directionalLight position={[5, 5, 5]} />
       <CameraRig>
         <Center>
@@ -57,6 +71,16 @@ export const CanvasApp = ({ position = [0, 0, 2.5], fov = 25 }) => {
 
 function Backdrop() {
   const shadows = useRef();
+
+  useFrame((state, delta) => {
+    easing.dampC(
+      shadows.current.getMesh().material.color,
+      state.selectedColor,
+      0.25,
+      delta
+    );
+  });
+
   return (
     <AccumulativeShadows
       ref={shadows}
