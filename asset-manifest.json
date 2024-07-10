@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/3dconfigurator/static/css/main.a8e5b56b.css",
+    "main.js": "/3dconfigurator/static/js/main.d4075dfa.js",
+    "index.html": "/3dconfigurator/index.html",
+    "main.a8e5b56b.css.map": "/3dconfigurator/static/css/main.a8e5b56b.css.map",
+    "main.d4075dfa.js.map": "/3dconfigurator/static/js/main.d4075dfa.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a8e5b56b.css",
+    "static/js/main.d4075dfa.js"
+  ]
+}
