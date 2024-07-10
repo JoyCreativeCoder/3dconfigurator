@@ -36,7 +36,7 @@ export const CanvasApp = ({ position = [0, 0, 2.5], fov = 25 }) => {
       eventPrefix="client"
     >
       <ambientLight intensity={0.5} />
-      <Environment preset="city" />
+      <Environment preset="forest" />
       <directionalLight position={[5, 5, 5]} />
       <CameraRig>
         <Center>

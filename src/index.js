@@ -1,7 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import CanvasApp from './Canvas'; // Ensure this import points to your renamed file
+import CanvasApp from './Canvas'; 
+import Overlay from './Overlay'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<CanvasApp />);
+root.render(
+ <>
+  <CanvasApp />
+  <Overlay />
+ </>
+)
