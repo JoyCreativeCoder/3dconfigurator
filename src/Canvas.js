@@ -1,5 +1,6 @@
 import React from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
+import * as THREE from "three";
 import {
   Center,
   useGLTF,
@@ -10,9 +11,14 @@ import {
 import { useRef } from "react";
 import { easing } from "maath";
 
+import { useSnapshot } from "valtio";
+import { state } from "./Store";
+
 function Box(props) {
   const { nodes, materials } = useGLTF("/3d_shirt.glb");
-  
+  const snap = useSnapshot(state);
+
+  materials.lambert1.color = new THREE.Color(snap.selectedColor);
   return (
     <group {...props} dispose={null}>
       <mesh
@@ -20,7 +26,8 @@ function Box(props) {
         receiveShadow
         geometry={nodes.T_Shirt_male.geometry}
         material={materials.lambert1}
-        position={[0.419, -0.210, 0]}
+        material-roughness = {1}
+        position={[0.419, -0.21, 0]}
         rotation={[Math.PI / 2, 0, 0]}
       />
     </group>
@@ -41,7 +48,7 @@ export const CanvasApp = ({ position = [0, 0, 2.5], fov = 25 }) => {
       <CameraRig>
         <Center>
           <Box />
-         <Backdrop />
+          <Backdrop />
         </Center>
       </CameraRig>
     </Canvas>
