@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
 
 * {
   box-sizing: border-box;
@@ -66,7 +66,7 @@ section {
 
 .section--container {
   margin-top: 5vh;
-  margin-left: 5vw;
+  margin-left: 1vw;
 }
 
 .section--container.hidden {
@@ -77,12 +77,12 @@ section {
 
 .section--container h1 {
   font-weight: 900;
-  font-size: 16vw;
+  font-size: 14vw;
   letter-spacing: -6px;
   font-style: italic;
   width: 30%;
-  line-height: 15vh;
-  font-family: 'Nunito Sans', sans-serif;
+  line-height: 200px;
+  font-family: "Nunito Sans", sans-serif;
 }
 
 .support--content {
@@ -206,4 +206,28 @@ button:hover {
   box-shadow: inset -250px 0 0 0 black;
 }
 
+@media screen and (max-width: 600px) {
+  .section--container {
+    margin-left: 15vw;
+  }
 
+  .section--container h1 {
+    font-size: 8rem;
+    letter-spacing: -6px;
+    line-height: 6rem;
+  }
+
+  .color-options {
+    margin-bottom: 20px;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    right: 40px;
+    transform: translateY(-50%);
+  }
+
+  .support--content {
+    top: -10%;
+    left: 0;
+  }
+}

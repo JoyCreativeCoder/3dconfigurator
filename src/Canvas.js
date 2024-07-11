@@ -180,6 +180,7 @@ function Box(props) {
 export const CanvasApp = ({ position = [0, 0, 2.5], fov = 25 }) => {
   return (
     <Canvas
+      gl = {{preserveDrawingBuffer: true }}
       shadows
       camera={{ position, fov }}
       eventSource={document.getElementById("root")}
