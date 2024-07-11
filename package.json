@@ -2,6 +2,7 @@
   "name": "reactconfigurator",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://joycreativecoder.github.io/3dconfigurator/",
   "dependencies": {
     "@pmndrs/branding": "github:pmndrs/branding",
     "@react-three/drei": "^9.108.3",
