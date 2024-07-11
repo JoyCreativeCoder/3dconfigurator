@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import {
   Center,
@@ -9,16 +9,15 @@ import {
   Decal,
   useTexture,
 } from "@react-three/drei";
-import { useRef } from "react";
 import { easing } from "maath";
 
 import { useSnapshot } from "valtio";
 import { state } from "./Store";
 
 function Box(props) {
-  const { nodes, materials } = useGLTF("/3d_shirt.glb");
+  const { nodes, materials } = useGLTF('/3d_shirt.glb');
   const snap = useSnapshot(state);
-  const texture = useTexture(`/${snap.selectedDecal}.png`)
+  const texture = useTexture(`/${snap.selectedDecal}.png`);
 
   useFrame((state, delta) => {
     easing.dampC(materials.lambert1.color, snap.selectedColor, 0.25, delta);
@@ -36,7 +35,7 @@ function Box(props) {
         rotation={[Math.PI / 2, 0, 0]}
       >
         <Decal
-        debug
+          debug
           position={[0, 0.04, 0.15]}
           rotation={[0, 0, 0]}
           scale={0.15}
@@ -123,6 +122,7 @@ function CameraRig({ children }) {
   return <group ref={group}>{children}</group>;
 }
 
-useGLTF.preload("/3d_shirt.glb");
+// Preload the GLTF model
+useGLTF.preload('/3d_shirt.glb');
 
 export default CanvasApp;
