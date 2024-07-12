@@ -62,8 +62,7 @@ The project is deployed using GitHub Pages. To deploy your own version:
 
 ## Demo Video
 
-[![3D Configurator Demo](video-thumbnail.png)](<img width="1490" alt="Screenshot 2024-07-12 at 6 41 33 AM" src="https://github.com/user-attachments/assets/3853654b-632e-4571-9fbd-babdcb7601ff">
-)
+![ScreenRecording2024-07-12at3 03 32PM-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/abbb5a13-392b-4c77-ae4e-9044b400fd26)
 
 ## License
 
