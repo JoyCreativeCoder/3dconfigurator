@@ -1,5 +1,9 @@
 # 3D Configurator
 
+## Demo Video
+
+![ScreenRecording2024-07-12at3 03 32PM-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/abbb5a13-392b-4c77-ae4e-9044b400fd26)
+
 A 3D shirt customization tool built with React and React Three Fiber, allowing users to create unique and exclusive shirts by selecting colors and decals.
 
 ## Features
@@ -59,10 +63,6 @@ The project is deployed using GitHub Pages. To deploy your own version:
     ```bash
     npm run deploy
     ```
-
-## Demo Video
-
-![ScreenRecording2024-07-12at3 03 32PM-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/abbb5a13-392b-4c77-ae4e-9044b400fd26)
 
 ## License
 
