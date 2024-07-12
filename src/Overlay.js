@@ -24,14 +24,14 @@ export default function Overlay() {
 
   return (
     <div className="container">
-      <header
+      <motion.header
              initial={{ opacity: 0, y: -120 }}
              animate={{ opacity: 1, y: 0 }}
              transition={{ type: 'spring', duration: 1.8, delay: 1 }}
       >
-        <SimpleLogo />
+        <a href="https://joycreativecoder.github.io/3dconfigurator/">built with Joy 🖤</a>
         <AiOutlineShopping size="3em" />
-      </header>
+      </motion.header>
 
       <AnimatePresence>
         {snap.intro ? (
